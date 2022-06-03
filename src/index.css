@@ -1,3 +1,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body{
+    box-sizing: content-box;
+}
+
+/*      Home Hero BG */
+.hero-bg{
+    /* background: rgb(11,9,121); */
+background: linear-gradient(102deg, rgba(11,9,121,1) 42%, rgba(145,0,255,1) 100%);
+/* background-size: 150%; */
+
+}
+
+
+
+
+.spin-hover:hover{
+    background-color: white;
+    color: black;
+    transition: all;
+    transition-duration: 500ms;
+    box-shadow: 11px 15px 54px -1px rgba(239, 239, 239,0.5) , -11px -15px 54px -1px rgba(239, 239, 239,0.5);
+}
+
+.rotate{
+    animation-name: rotate;
+    animation-duration: 15000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+}
+
+@keyframes rotate {
+
+    0%{transform: rotate(0deg);}
+    50%{transform: rotate(180deg);}
+    100%{transform: rotate(360deg);}
+    
+}
+

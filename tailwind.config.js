@@ -3,7 +3,8 @@ module.exports = {
   theme: {
     fontFamily:{
       head:['charmonman'],
-      disp:['ubuntu']
+      disp:['ubuntu'],
+      prompt:['prompt']
     },
     extend: {},
   },
