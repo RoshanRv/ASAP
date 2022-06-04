@@ -32,7 +32,11 @@ const HomeHero = () => {
     },[])
 
   return (
-    <section className='min-h-screen relative hero-bg'>
+    <section className='min-h-screen hero-bg'>
+
+    <span class="before:block before:absolute before:-inset-1 before:-skew-y-2 before:bg-red-400 relative inline-block">
+        <span class="relative text-white text-8xl ">ASAP !!!</span>
+    </span>
 
         {/*    Hero Spinner */}
         <div className="absolute top-full left-1/2 -translate-x-1/2 -translate-y-1/2">
@@ -60,9 +64,7 @@ const HomeHero = () => {
 
         </div>
 
-        {/* <section className=' mt-10 p-2 bg-black'>
-
-        </section> */}
+        
         
 
 
