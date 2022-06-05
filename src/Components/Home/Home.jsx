@@ -9,7 +9,7 @@ const Home = () => {
     <main className='font-prompt'>
       <Header />
       <HomeHero/>
-      <section className='  bg-black'>
+      <section className=' '>
 
         {/* // <img src={Log} alt="" /> */}
 
