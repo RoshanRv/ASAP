@@ -1,25 +1,29 @@
 import React,{useState}from 'react'
 import Form from './Form'
+import ScrollAnimation from 'react-animate-on-scroll';
 
 export const SectionCard = ({serviceAssets,serviceAssetsIndex,data,setService,setShowForm})=>{
 
 
 
-    return(<div className="glass lg:p-6 flex justify-center items-center transition-all duration-500 " style={{ border:'4px solid' ,borderColor:serviceAssets[serviceAssetsIndex].color}} >
-        <div className='w-3/4'>
-            <h1 className="lg:text-3xl transition-all duration-[500ms] mb-4  " style={{color:serviceAssets[serviceAssetsIndex].bgColor,textDecorationLine:'underline',textDecorationColor:serviceAssets[serviceAssetsIndex].color, textUnderlineOffset:'5px'}}>{data.head}</h1>
-            <p className="text-black text-left">{data.subHead}</p>
-        </div>
-        <div className='flex flex-col gap-y-8 w-1/4 justify-center '>
-            <button onClick={(e)=>{
-                setShowForm(true)
-                setService(e.target.name)
-                }} className='px-6 py-2 glass w-max mx-auto transition-all duration-[500ms]' style={{backgroundColor:serviceAssets[serviceAssetsIndex].bgColor, borderColor:serviceAssets[serviceAssetsIndex].color}} name={data.head} >Book Now</button>
-            <button className='px-6 py-2 glass w-max mx-auto transition-all duration-[500ms]' style={{backgroundColor:serviceAssets[serviceAssetsIndex].bgColor, borderColor:serviceAssets[serviceAssetsIndex].color}} >View More</button>
-        </div>
-        
+    return(
+    // <ScrollAnimation animateIn="fadeIn"  duration={2000}>
+        <div className="glass lg:p-6 flex justify-center items-center transition-all duration-500 " style={{ border:'4px solid' ,borderColor:serviceAssets[serviceAssetsIndex].color}} >
+            <div className='w-3/4'>
+                <h1 className="lg:text-3xl transition-all duration-[500ms] mb-4  " style={{color:serviceAssets[serviceAssetsIndex].bgColor,textDecorationLine:'underline',textDecorationColor:serviceAssets[serviceAssetsIndex].color, textUnderlineOffset:'5px'}}>{data.head}</h1>
+                <p className="text-black text-left">{data.subHead}</p>
+            </div>
+            <div className='flex flex-col gap-y-8 w-1/4 justify-center '>
+                <button onClick={(e)=>{
+                    setShowForm(true)
+                    setService(e.target.name)
+                    }} className='px-6 py-2 glass w-max mx-auto transition-all duration-[500ms]' style={{backgroundColor:serviceAssets[serviceAssetsIndex].bgColor, borderColor:serviceAssets[serviceAssetsIndex].color}} name={data.head} >Book Now</button>
+                <button className='px-6 py-2 glass w-max mx-auto transition-all duration-[500ms]' style={{backgroundColor:serviceAssets[serviceAssetsIndex].bgColor, borderColor:serviceAssets[serviceAssetsIndex].color}} >View More</button>
+            </div>
+            
 
-    </div>
+        </div>
+    // </ScrollAnimation>
 
     )}
 

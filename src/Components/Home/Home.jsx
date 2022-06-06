@@ -21,10 +21,15 @@ const Home = () => {
 
   const serviceAssets = [
     {
-        bg:0,
-        bgColor:'#5be4a9',
-        color:'#9df5c9',
-    },
+      bg:8,
+      bgColor:'#f5423c',
+      color:'#266cdf',
+  },
+    {
+      bg:4,
+      bgColor:'#fb9847',
+      color:'#8db4f4',
+  },
     {
         bg:1,
         bgColor:'#e15a44',
@@ -40,11 +45,7 @@ const Home = () => {
         bgColor:'#509bef',
         color:'#dfe3ff',
     },
-    {
-        bg:4,
-        bgColor:'#fb9847',
-        color:'#8db4f4',
-    },
+    
     {
         bg:5,
         bgColor:'#fb9847',
@@ -56,15 +57,17 @@ const Home = () => {
         color:'#e8a0df',
     },
     {
+      bg:0,
+      bgColor:'#5be4a9',
+      color:'#9df5c9',
+  },
+    {
         bg:7,
         bgColor:'#f88c51',
         color:'#ffdab4',
     },
-    {
-        bg:8,
-        bgColor:'#f5423c',
-        color:'#266cdf',
-    }
+   
+
   ]
 
     useEffect(()=>{

@@ -11,11 +11,56 @@ body{
     /* background: rgb(11,9,121); */
 background: linear-gradient(102deg, rgba(11,9,121,1) 42%, rgba(145,0,255,1) 100%);
 /* background-size: 150%; */
+}
 
+
+.animate{
+    animation-name: fadeIn;
+    animation-duration: 2000ms;
+}
+
+@keyframes fadeIn {
+
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+    
+}
+
+.animate-zoom{
+
+    animation-name: zoom;
+    animation-duration: 2500ms;
+}
+
+@keyframes zoom {
+
+    0%{
+        transform: scale(0.2);
+        opacity: 0;
+    }
+
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+    
 }
 
 .text-sha{
     text-shadow: 2px 1px 10px ;
+}
+
+.icon-sha{
+    filter:drop-shadow(2px 1px 4px);
+}
+
+.serv{
+    /* filter:drop-shadow(1px 1px .1px); */
 }
 
 .glass{
