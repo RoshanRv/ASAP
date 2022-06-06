@@ -4,7 +4,6 @@ import { faPlug ,faBroom,} from '@fortawesome/free-solid-svg-icons'
 import { faToilet,faCouch,faBrush,faComputer,faSolarPanel,faFireBurner,faCar } from '@fortawesome/free-solid-svg-icons'
 import { faScrewdriverWrench,faHouseChimneyUser,faPalette,faWind} from '@fortawesome/free-solid-svg-icons'
 
-
 //      Images
 import electrician from '../../assets/home/electrician.png'
 import solar from '../../assets/home/solar.png'
@@ -16,76 +15,20 @@ import auto from '../../assets/home/auto.png'
 import carpenter from '../../assets/home/carpenter.png'
 import cleaner from '../../assets/home/cleaner.png'
 
-const HomeHero = () => {
+
+
+
+
+const HomeHero = ({serviceAssets,serviceAssetsIndex}) => {
 
     const [services,setService]=useState('Services')
 
-    const [serviceAssetsIndex,setServiceAssetsIndex]=useState(0)
-    let count = useRef(0)
-
-    const serviceAssets = [
-        {
-            bg:electrician,
-            bgColor:'#5be4a9',
-            color:'#9df5c9',
-        },
-        {
-            bg:auto,
-            bgColor:'#e15a44',
-            color:'#7d86b3',
-        },
-        {
-            bg:cleaner,
-            bgColor:'#fddf49',
-            color:'#049cde',
-        },
-        {
-            bg:plumber,
-            bgColor:'#509bef',
-            color:'#dfe3ff',
-        },
-        {
-            bg:solar,
-            bgColor:'#fb9847',
-            color:'#8db4f4',
-        },
-        {
-            bg:painter,
-            bgColor:'#fb9847',
-            color:'#2b468a',
-        },
-        {
-            bg:interior,
-            bgColor:'#d269cc',
-            color:'#e8a0df',
-        },
-        {
-            bg:carpenter,
-            bgColor:'#f88c51',
-            color:'#ffdab4',
-        },
-        {
-            bg:computer,
-            bgColor:'#f5423c',
-            color:'#266cdf',
-        },
-    ]
+    const serviceList =  [electrician,auto,cleaner,plumber,solar,painter,interior,carpenter,computer]
+    
 
 
 
     useEffect(()=>{
-
-        const timer = setInterval(()=>{
-             setServiceAssetsIndex(e=>{
-                if(e<serviceAssets.length-1){
-                    return e+1
-                }else{
-                    return 0
-                }
-            })
-            
-        },3000)
-
 
         const btn = document.querySelectorAll('.serv')
         btn.forEach(service=>{
@@ -103,36 +46,35 @@ const HomeHero = () => {
             })
         })
 
-        return ()=> clearInterval(timer)
 
     },[])
 
   return (
-    <section className='min-h-[135vh] px-6 -z-50 transition-all duration-1000 overflow-hidden' style={{backgroundColor:serviceAssets[serviceAssetsIndex].color}} >
+    <section className='min-h-[140vh] px-6 transition-all duration-[500ms] overflow-hidden' style={{backgroundColor:serviceAssets[serviceAssetsIndex].color , borderBottom:`6px solid ${serviceAssets[serviceAssetsIndex].bgColor }`}}  >
         {/* <div className="bg-[#fddf59]"></div> */}
 
     {/* <span class="before:block before:absolute before:-inset-1 before:-skew-y-2 before:bg-red-400 relative inline-block">
         <span class="relative text-white text-8xl ">ASAP !!!</span>
     </span> */}
     <div className=" h-full pt-32  -z-50">
-        <div className=" min-h-[70vh]  rounded-xl flex justify-center items-center">
+        <div className=" min-h-[70vh] relative rounded-xl flex  items-center">
 
             <div className='w-1/2 h-full text-left align-middle'>
                 <div className="w-mx w-3/4 mx-auto">
-                    <div className="flex text-sha items-center gap-x-10 text-9xl  font-bold transition-all duration-1000 " style={{color:serviceAssets[serviceAssetsIndex].bgColor}} > 
+                    <div className="flex text-sha items-center gap-x-10 text-9xl  font-bold transition-all duration-[500ms] " style={{color:serviceAssets[serviceAssetsIndex].bgColor}} > 
                         <h1 className="" ><em>ASAP</em></h1>
                         <FontAwesomeIcon  icon={faWind} className='text-8xl' style={{filter:'drop-shadow(2px 1px 4px)'}}/>
                     </div>               
-                    <p className='my-6 text-2xl transition-all duration-1000 text-white'  ><em>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, maiores.</em></p>
+                    <p className='my-6 text-2xl transition-all duration-[500ms] text-white'  ><em>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, maiores.</em></p>
 
                 </div>
                 
 
             </div>
-            <div className='w-1/2  h-max self-end text-center  flex justify-center flex-col items-center'>
+            <div className='w-1/2 absolute top-0 right-1/2 translate-x-1/2 h-max self-end text-center  flex justify-center flex-col items-center'>
                 {serviceAssets.map((data,i)=>(
                     // <div className='w-max mx-auto text-center'>
-                        <img src={data.bg} alt="" className={`h-[32rem]  mx-auto absolute top-1/2 left-3/4  -translate-y-1/2 -translate-x-1/2 transition-all duration-1000 ${serviceAssetsIndex==i?' opacity-100':'opacity-0'} `} />
+                        <img src={serviceList[data.bg]} alt="" className={`h-[32rem]  mx-auto absolute top-0 right-0 translate-x-1/2 transition-all duration-[500ms] ${serviceAssetsIndex==i?' opacity-100':'opacity-0'} `} />
                     // </div>
                 ))}
                 
@@ -145,7 +87,7 @@ const HomeHero = () => {
         {/*    Hero Spinner */}
         <div className="absolute top-full left-1/2 -z-0 -translate-x-1/2 -translate-y-1/2">
 
-            <div className="relative rounded-full text-4xl  h-[40rem] w-[40rem] bg-gray-00  flex gap- flex-wrap transition-all duration-1000" style={{color:serviceAssets[serviceAssetsIndex].bgColor}} >
+            <div className="relative rounded-full text-4xl  h-[40rem] w-[40rem] bg-gray-00  flex gap- flex-wrap transition-all duration-[500ms]" style={{color:serviceAssets[serviceAssetsIndex].bgColor}} >
                 {/*         Services   */}
                 <h1 className=" absolute  top-1/2 glass text-center -translate-y-full  w-max   px-4 py-2 rounded-lg left-1/2 -translate-x-1/2"  >{services}</h1>
                 {/*   */}
@@ -168,7 +110,6 @@ const HomeHero = () => {
 
         </div>
 
-        {/* <div className="h-[50vh] duration-" style={{backgroundColor:serviceAssets[serviceAssetsIndex].color}} ></div> */}
 
         
         
