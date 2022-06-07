@@ -50,16 +50,16 @@ const HomeHero = ({serviceAssets,serviceAssetsIndex}) => {
     },[])
 
   return (
-    <section className='min-h-[140vh] px-6 transition-all duration-[500ms] overflow-hidden' style={{backgroundColor:serviceAssets[serviceAssetsIndex].color , borderBottom:`6px solid ${serviceAssets[serviceAssetsIndex].bgColor }`}}  >
+    <section className='h-[100vh] text-center px-6 transition-all  items-center flex flex-col  duration-[500ms] overflow-hidden' style={{backgroundColor:serviceAssets[serviceAssetsIndex].color , borderBottom:`6px solid ${serviceAssets[serviceAssetsIndex].bgColor }`}}  >
         {/* <div className="bg-[#fddf59]"></div> */}
 
     {/* <span class="before:block before:absolute before:-inset-1 before:-skew-y-2 before:bg-red-400 relative inline-block">
         <span class="relative text-white text-8xl ">ASAP !!!</span>
     </span> */}
-    <div className=" h-full pt-32  -z-50">
-        <div className=" min-h-[70vh] relative rounded-xl flex  items-center">
+    <div className=" h-max w-full pt-32 ">
+        <div className=" in-h-[70vh] h-full  relative rounded-xl flex  items-center">
 
-            <div className='w-1/2 h-full fadeIn text-left heo align-middle'>
+            <div className='md:w-1/2 w-full translate-y-1/2 h-full fadeIn text-left align-middle'>
                 <div className="w-mx w-3/4 mx-auto">
                     <div className="flex text-sha items-center gap-x-10 lg:text-9xl text-7xl  font-bold transition-all duration-[500ms] " style={{color:serviceAssets[serviceAssetsIndex].bgColor}} > 
                         <h1 className="" ><em>ASAP</em></h1>
@@ -71,7 +71,7 @@ const HomeHero = ({serviceAssets,serviceAssetsIndex}) => {
                 
 
             </div>
-            <div className='w-1/2 absolute top-0 fadeIn right-1/2 translate-x-1/2 h-max self-end text-center  flex justify-center flex-col items-center'>
+            <div className='w-1/2 absolute top-0 fadeIn right-1/2 translate-x-1/2 h-max self-end text-center  hidden md:flex justify-center flex-col items-center'>
                 {serviceAssets.map((data,i)=>(
                     // <div className='w-max mx-auto text-center'>
                         <img src={serviceList[data.bg]} alt="" className={`lg:h-[32rem] h-[26rem]  mx-auto absolute top-0 right-0 translate-x-1/2 transition-all duration-[500ms] ${serviceAssetsIndex==i?' opacity-100':'opacity-0'} `} />
@@ -85,7 +85,7 @@ const HomeHero = ({serviceAssets,serviceAssetsIndex}) => {
     </div>
 
         {/*    Hero Spinner */}
-        <div className="absolute top-full scale-0 md:scale-75 lg:scale-[.85] xl:scale-90 left-1/2 -z-0 -translate-x-1/2 -translate-y-1/2">
+        <div className="absolte top-full scale-0 md:scale-75 lg:scale-[.85] xl:scale-90 left-1/2 -z-0  translate-y-[40%]">
 
             <div className="relative rounded-full text-4xl animate-zoom h-[40rem] w-[40rem] bg-gray-00  flex gap- flex-wrap transition-all duration-[500ms]" style={{color:serviceAssets[serviceAssetsIndex].bgColor}} >
                 {/*         Services   */}
