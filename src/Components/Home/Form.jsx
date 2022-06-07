@@ -13,7 +13,12 @@ const Form = ({data,serviceData,showForm,setShowForm,setService,service}) => {
 
     const handleBook = (e)=>{
 
-        e.preventDefault()
+        if(name=='' || phone=='' || address==''){
+            
+        }else{
+            e.preventDefault()
+        }
+
 
     }
 
@@ -53,7 +58,7 @@ const Form = ({data,serviceData,showForm,setShowForm,setService,service}) => {
                     <textarea placeholder='Eg: 5B, 3rd Floor, K Block, ABC Flat'  value={address} onChange={(e)=>setAddress(e.target.value)} required className='outline-0 p-2 w-1/2 text-lg transition-all duration-500' style={{borderBottom:`2px solid ${data.color}`,resize:'none'}} ></textarea>
                 </div>
 
-                <button><input type="submit" value="Book Now" onClick={(e)=>handleBook(e)} className='px-6 py-2 border-2  rounded-md mt-4 w-max mx-auto transition-all  duration-500' style={{backgroundColor:data.bgColor, borderColor:data.color}} /></button>
+                <button><input type="submit" value="Book Now" onClick={(e)=>handleBook(e)} className='px-6 py-2 border-2 cursor-pointer rounded-md mt-4 w-max mx-auto transition-all  duration-500' style={{backgroundColor:data.bgColor, borderColor:data.color}} /></button>
                
             </form>
         </div>

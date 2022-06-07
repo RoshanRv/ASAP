@@ -4,6 +4,7 @@
 
 body{
     box-sizing: content-box;
+    scroll-behavior: smooth;
 }
 
 /*      Home Hero BG */
@@ -13,10 +14,23 @@ background: linear-gradient(102deg, rgba(11,9,121,1) 42%, rgba(145,0,255,1) 100%
 /* background-size: 150%; */
 }
 
+@media (max-width:768px) {
+    .hero{
 
-.animate{
+        background: rgba( 255, 255, 255, 0.2 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 50px );
+        -webkit-backdrop-filter: blur( 14px );
+        border-radius: 14px;
+        border: 2px solid rgba( 255, 255, 255, 0.98 );
+
+    }
+}
+
+
+.fadeIn{
     animation-name: fadeIn;
-    animation-duration: 2000ms;
+    animation-duration: 5000ms;
 }
 
 @keyframes fadeIn {
@@ -26,6 +40,65 @@ background: linear-gradient(102deg, rgba(11,9,121,1) 42%, rgba(145,0,255,1) 100%
     }
 
     100%{
+        opacity: 1;
+    }
+    
+}
+
+.slideDown{
+    animation-name: slideDown;
+    animation-duration: 2000ms;
+}
+
+@keyframes slideDown {
+
+    0%{
+        top:-100px;
+        opacity: 0;
+    }
+
+    100%{
+        top:0;
+        opacity: 1;
+    }
+    
+}
+
+.slideRight{
+    animation-name: slideRight;
+    animation-duration: 2500ms;
+    animation-timing-function: ease-in;
+}
+
+@keyframes slideRight {
+
+    0%{
+        right:0px;
+        opacity: 0;
+    }
+
+    100%{
+        right:50%;
+        opacity: 1;
+    }
+    
+}
+
+.slideLeft{
+    animation-name: slideLeft;
+    animation-duration: 2500ms;
+    animation-timing-function: ease-in;
+}
+
+@keyframes slideLeft {
+
+    0%{
+        transform: translateX(-500px);
+        opacity: 0;
+    }
+
+    100%{
+        right:50%;
         opacity: 1;
     }
     

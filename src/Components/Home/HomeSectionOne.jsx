@@ -1,19 +1,21 @@
-import React,{useState}from 'react'
+import React,{useState,useEffect}from 'react'
 import Form from './Form'
-import ScrollAnimation from 'react-animate-on-scroll';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-export const SectionCard = ({serviceAssets,serviceAssetsIndex,data,setService,setShowForm})=>{
+export const SectionCard = ({serviceAssets,serviceAssetsIndex,data,setService,setShowForm,animation})=>{
 
-
+    useEffect(()=>{
+        AOS.init()
+    },[])
 
     return(
-    // <ScrollAnimation animateIn="fadeIn"  duration={2000}>
-        <div className="glass lg:p-6 flex justify-center items-center transition-all duration-500 " style={{ border:'4px solid' ,borderColor:serviceAssets[serviceAssetsIndex].color}} >
-            <div className='w-3/4'>
-                <h1 className="lg:text-3xl transition-all duration-[500ms] mb-4  " style={{color:serviceAssets[serviceAssetsIndex].bgColor,textDecorationLine:'underline',textDecorationColor:serviceAssets[serviceAssetsIndex].color, textUnderlineOffset:'5px'}}>{data.head}</h1>
+        <div  data-aos={animation} className="glass lg:p-6 p-4 mb-8 flex justify-center items-center transition-all duration-500 " style={{ border:'4px solid' ,borderColor:serviceAssets[serviceAssetsIndex].color}} >
+            <div className='w-full'>
+                <h1 className="lg:text-3xl text-xl transition-all duration-[500ms] mb-4  " style={{color:serviceAssets[serviceAssetsIndex].bgColor,textDecorationLine:'underline',textDecorationColor:serviceAssets[serviceAssetsIndex].color, textUnderlineOffset:'5px'}}>{data.head}</h1>
                 <p className="text-black text-left">{data.subHead}</p>
             </div>
-            <div className='flex flex-col gap-y-8 w-1/4 justify-center '>
+            <div className='flex flex-col gap-y-8 w-max justify-center '>
                 <button onClick={(e)=>{
                     setShowForm(true)
                     setService(e.target.name)
@@ -23,7 +25,6 @@ export const SectionCard = ({serviceAssets,serviceAssetsIndex,data,setService,se
             
 
         </div>
-    // </ScrollAnimation>
 
     )}
 
@@ -85,9 +86,9 @@ const HomeSectionOne = ({serviceAssets,serviceAssetsIndex}) => {
 
   return (
     <section className='px-6 mt-24 text-center'>
-        <h1 className="lg:text-6xl text-sha transition-all duration-[500ms]" style={{color:serviceAssets[serviceAssetsIndex].bgColor}}>Book Our Services</h1>
-        <div className="grid grid-cols-2 mt-10 gap-16">
-            {serviceDes.map((data,i)=>(<SectionCard key={i} data={data}  setService={setService} setShowForm={setShowForm} service={service} serviceAssets={serviceAssets} serviceAssetsIndex={serviceAssetsIndex}  />))}
+        <h1 className="lg:text-6xl text-4xl text-sha transition-all duration-[500ms]" style={{color:serviceAssets[serviceAssetsIndex].bgColor}}>Book Our Services</h1>
+        <div className="grid lg:grid-cols-2 grid-cols-1 mt-10 gap-16">
+            {serviceDes.map((data,i)=>(<SectionCard key={i} data={data} animation={(i+1)%2==0?'fade-left':'fade-right'}  setService={setService} setShowForm={setShowForm} service={service} serviceAssets={serviceAssets} serviceAssetsIndex={serviceAssetsIndex}  />))}
         </div>
         <Form data={serviceAssets[serviceAssetsIndex]} serviceData={serviceDes} setService={setService} service={service} showForm={showForm} setShowForm={setShowForm} />
     </section>

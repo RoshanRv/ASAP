@@ -91,7 +91,7 @@ const Home = () => {
 
   return (
     <main className=' font-prompt overflow-hidden'  >
-      <Header />
+      <Header data={serviceAssets[serviceAssetsIndex]} />
       <HomeHero serviceAssets={serviceAssets}  serviceAssetsIndex={serviceAssetsIndex} />
       <HomeSectionOne serviceAssets={serviceAssets}  serviceAssetsIndex={serviceAssetsIndex} />
       <section className=' '>
