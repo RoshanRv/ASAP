@@ -2,9 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+:root{
+    --boom:blue;
+}
+
 body{
     box-sizing: content-box;
     scroll-behavior: smooth;
+    scroll-padding-top: 10%;
+    scroll-padding: 50px;
 }
 
 /*      Home Hero BG */
@@ -128,6 +134,10 @@ background: linear-gradient(102deg, rgba(11,9,121,1) 42%, rgba(145,0,255,1) 100%
     text-shadow: 2px 1px 10px ;
 }
 
+.text-shaho:hover{
+    text-shadow: 2px 1px 6px ;
+}
+
 .icon-sha{
     filter:drop-shadow(2px 1px 4px);
 }
@@ -147,6 +157,12 @@ background: linear-gradient(102deg, rgba(11,9,121,1) 42%, rgba(145,0,255,1) 100%
 
 
 
+.but:hover{
+    filter:drop-shadow(2px 1px 2px) ;
+}
+
+
+
 
 .spin-hover:hover{
     background-color: white;
@@ -158,7 +174,7 @@ background: linear-gradient(102deg, rgba(11,9,121,1) 42%, rgba(145,0,255,1) 100%
 
 .rotate{
     animation-name: rotate;
-    animation-duration: 15000ms;
+    animation-duration: 20000ms;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 
@@ -170,5 +186,26 @@ background: linear-gradient(102deg, rgba(11,9,121,1) 42%, rgba(145,0,255,1) 100%
     50%{transform: rotate(180deg);}
     100%{transform: rotate(360deg);}
     
+}
+
+/*          SCROLLBAR */
+
+::-webkit-scrollbar{
+    width: 8px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: var(--scroll-bg);
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 500ms;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: var(--scroll-thumb);
+    /* border-radius: 20px; */
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 500ms;
 }
 
