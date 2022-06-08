@@ -42,9 +42,9 @@ const Form = ({data,serviceData,showForm,setShowForm,setService,service}) => {
                     <label style={{color:data.bgColor}} className='text-xl transition-all duration-500'>Service</label>
                     <select value={service} onChange={(e)=>setService(e.target.value)} required className='outline-0 transition-all duration-500 p-2 w-1/2 text-lg' style={{borderBottom:`2px solid ${data.color}`}} >
                         {/* <option value="">Select</option> */}
-                        {serviceData.map((sData=>(
-                            <option value={sData.head}>{sData.head}</option>
-                        )))}
+                        {serviceData.map((sData,i)=>(
+                            <option key={i} value={sData.head}>{sData.head}</option>
+                        ))}
                     </select >
                     
                 </div>

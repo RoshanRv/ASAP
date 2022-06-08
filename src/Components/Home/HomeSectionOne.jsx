@@ -26,8 +26,8 @@ export const SectionCard = ({serviceAssets,serviceAssetsIndex,data,setService,se
     return(
         <div  id={data.head} data-aos={animation} className="glass  lg:p-4 p-2 mb-8 transition-all duration-500 " style={{ border:'4px solid' ,borderColor:serviceAssets[serviceAssetsIndex].color}} >
             <div className="flex gap-x-3  ">
-                <div className="lg:w-[20rem] flex items-center align-middle">
-                    <img src={pics[index]} alt="" />
+                <div className="lg:w-[20rem] flex items-center align-middle overflow-hidden">
+                    <img src={pics[index]} alt="" className='hover:scale-[1.15] transition-all duration-500' />
                 </div>
                 <div className='w-full  flex flex-col gap-10'>
                     <h1 className="lg:text-3xl text-xl  transition-all duration-[500ms] mb-4  " style={{color:serviceAssets[serviceAssetsIndex].bgColor,textDecorationLine:'underline',textDecorationColor:serviceAssets[serviceAssetsIndex].color, textUnderlineOffset:'5px'}}>{data.head}</h1>

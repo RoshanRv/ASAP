@@ -81,7 +81,7 @@ const HomeHero = ({serviceAssets,serviceAssetsIndex}) => {
             <div className='w-1/2 absolute top-0 fadeIn right-1/2 translate-x-1/2 h-max self-end text-center  hidden md:flex justify-center flex-col items-center'>
                 {serviceAssets.map((data,i)=>(
                     // <div className='w-max mx-auto text-center'>
-                        <img src={serviceList[data.bg]} alt="" className={`lg:h-[32rem] h-[26rem]  mx-auto absolute top-0 right-0 translate-x-1/2 transition-all duration-[500ms] ${serviceAssetsIndex==i?' opacity-100':'opacity-0'} `} />
+                        <img key={i} src={serviceList[data.bg]} alt="" className={`lg:h-[32rem] h-[26rem]  mx-auto absolute top-0 right-0 translate-x-1/2 transition-all duration-[500ms] ${serviceAssetsIndex==i?' opacity-100':'opacity-0'} `} />
                     // </div>
                 ))}
                 
