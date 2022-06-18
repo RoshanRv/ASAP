@@ -5,10 +5,12 @@ import RequestPage from "./Components/RequestPage";
 import RequestDetails from "./Components/RequestDetails";
 import AdminSettings from "./Components/AdminSettings";
 import Home from './Components/Home/Home';
+import CustomCursor from './Components/CustomCursor';
 
 function App() {
   return (
     <>
+    <CustomCursor/>
     <Router>
       <Routes>
         <Route path='/' element={<Home/>} />

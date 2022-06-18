@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body ,button, * {
+    cursor: none;
+}
+
 
 
 body{
@@ -10,6 +14,15 @@ body{
     scroll-padding-top: 10%;
     scroll-padding: 50px;
 }
+
+/*      Custom Cursor */
+.custom-cursor{
+    z-index: 1000;
+    transform: translate3d(0,0,0);
+    overflow: hidden;
+    pointer-events: none;
+}
+
 
 /*      Home Hero BG */
 .hero-bg{
