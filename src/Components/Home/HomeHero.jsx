@@ -57,32 +57,29 @@ const HomeHero = ({serviceAssets,serviceAssetsIndex}) => {
     },[])
 
   return (
-    <section className='h-[100vh] text-center px-6 transition-all  items-center flex flex-col  duration-[500ms] overflow-hidden' style={{backgroundColor:serviceAssets[serviceAssetsIndex].color , borderBottom:`6px solid ${serviceAssets[serviceAssetsIndex].bgColor }`}}  >
-        {/* <div className="bg-[#fddf59]"></div> */}
+    <section className='h-[100vh] fix text-center px-6 transition-all  items-cener flex flex-row-reverse  bg-mBlack  duration-[500ms] overflow-hidden'  >
+       
 
-    {/* <span class="before:block before:absolute before:-inset-1 before:-skew-y-2 before:bg-red-400 relative inline-block">
-        <span class="relative text-white text-8xl ">ASAP !!!</span>
-    </span> */}
     <div className=" h-max w-full pt-32 ">
-        <div className=" in-h-[70vh] h-full  relative rounded-xl flex  items-center">
+        <div className=" h-full w-full relatve rounded-xl flex  items-cente">
+            <div className="w-1/2 h-full"></div>
 
-            <div className='md:w-1/2 w-full translate-y-1/2 h-full fadeIn text-left align-middle'>
-                <div className="w-mx w-3/4 mx-auto">
-                    <div className="flex text-sha items-center gap-x-10 lg:text-9xl text-7xl  font-bold transition-all duration-[500ms] " style={{color:serviceAssets[serviceAssetsIndex].bgColor}} > 
-                        <h1 className="" ><em>ASAP</em></h1>
+            <div className='md:w-full w-full z-10 h-full  ea text-left alig-middle'>
+                <div className="w-mx w-full mx-auto lass p-4">
+                    <div className="flex asap text-sha items-center slideRight text-lRed gap-x-10 lg:text-9xl text-7xl  font-bold transition-all duration-[500ms] "  > 
+                        <h1 className="asap" ><em>ASAP</em></h1>
                         <FontAwesomeIcon  icon={faWind} className='lg:text-8xl text-6xl icon-sha' />
                     </div>               
-                    <p className='my-6 lg:text-2xl text-xl transition-all duration-[500ms] text-white'  ><em>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, maiores.</em></p>
+                    <p className='my-6 lg:text-2xl text-xl transition-all slideRight duration-[500ms] text-dRed text-sha' style={{animationDelay:'200ms'}} ><em>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, maiores.</em></p>
 
                 </div>
                 
 
             </div>
-            <div className='w-1/2 absolute top-0 fadeIn right-1/2 translate-x-1/2 h-max self-end text-center  hidden md:flex justify-center flex-col items-center'>
+            <div className='w-4/12 bg-blu-600 -z-0  absolute top-1/2 -translate-y-1/2  fadeIn right-1/2 translate-x-1/2 h-screen self-end text-center  hidden md:flex justify-center flex-col items-center'>
                 {serviceAssets.map((data,i)=>(
-                    // <div className='w-max mx-auto text-center'>
-                        <img key={i} src={serviceList[data.bg]} alt="" className={`lg:h-[32rem] h-[26rem]  mx-auto absolute top-0 right-0 translate-x-1/2 transition-all duration-[500ms] ${serviceAssetsIndex==i?' opacity-100':'opacity-0'} `} />
-                    // </div>
+                        
+                        <img key={i} src={serviceList[data.bg]} alt="" className={`lg:h-[22rem]  h-[16rem]  mx-auto absolute top-3/4 -translate-y-1/2 right-0 translate-x-1/2 transition-all ease-in-out duration-[2000ms] ${serviceAssetsIndex==i?' opacity-100 scale-100':'opacity-0 scale-75 '} `} />
                 ))}
                 
             </div>
@@ -92,12 +89,13 @@ const HomeHero = ({serviceAssets,serviceAssetsIndex}) => {
     </div>
 
         {/*    Hero Spinner */}
-        <div className="absolte top-full scale-0 md:scale-[.75] lg:scale-[.80] xl:scale-[.85] left-1/2 -z-0  lg:translate-y-[80%] xl:translate-y-[15%] 2xl:translate-y-[40%]">
+        <div className="absolute top-[55%]  scale-0 md:scale-[.75] lg:scale-[.80] xl:scale-[.95] -left-[20%] -translate-y-1/2 -z-0  ">
 
-            <div className="relative rounded-full text-4xl animate-zoom h-[40rem] w-[40rem] bg-gray-00  flex gap- flex-wrap transition-all duration-[500ms]" style={{color:serviceAssets[serviceAssetsIndex].bgColor}} >
+            <div className="relative rounded-full text-4xl animate-zoom h-[40rem] w-[40rem] bg-gray-00  flex gap- flex-wrap transition-all duration-[500ms] text-lRed" >
                 {/*         Services   */}
-                <h1 className=" absolute  top-1/2 glass text-center -translate-y-full  w-max   px-4 py-2 rounded-lg left-1/2 -translate-x-1/2"  >{services}</h1>
+                {/* <h1 className=" absolute  top-1/2 glass text-center -translate-y-full  w-max   px-4 py-2 rounded-lg left-1/2 -translate-x-1/2"  >{services}</h1> */}
                 {/*   */}
+                {/* <div className="bg-lBlack mix-blend-difference w-32 h-32 rounded-full  absolute right-0 top-1/2 -translate-y-1/2"></div> */}
                 <div className="w-full h-full rotate ">
                     <a href='#Electrician' className='  p-4 spin-hover serv icon  h-max absolute top-8 left-1/2 -translate-x-1/2  rounded-full glass px-6  ' name='Electrician'  ><FontAwesomeIcon icon={faPlug}  /></a>
                     <a href='#Cleaning' className='  p-4 spin-hover serv icon  rotate-[30deg] h-max absolute top-16 right-36  rounded-full glass px-3  ' name='Cleaning'  ><FontAwesomeIcon icon={faBroom}  /></a>

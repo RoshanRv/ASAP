@@ -15,10 +15,12 @@ const CustomCursor = () => {
             
         })
 
+        // cursorRef.current.addEventListener('click',()=>console.log('red'))
+
     },[])
 
   return (
-    <div className='custom-cursor w-4 h-4 bg-red-600 rounded-full  fixed' ref={cursorRef} ></div>
+    <div className='custom-cursor' ref={cursorRef} ></div>
   )
 }
 

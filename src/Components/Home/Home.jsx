@@ -81,7 +81,7 @@ const Home = () => {
            }
        })
        
-   },10000)
+   },4000)
 
    return ()=> clearInterval(timer)
 

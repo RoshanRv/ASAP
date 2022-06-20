@@ -24,22 +24,22 @@ export const SectionCard = ({serviceAssets,serviceAssetsIndex,data,setService,se
     const pics = [electBook,cleanBook,solarBook,paintBook,HomeBook,interiorBook,kitchenBook,autoBook,computerBook,carpenterBook,ITBook,plumberBook]
 
     return(
-        <div  id={data.head} data-aos={animation} className="glass  lg:p-4 p-2 mb-8 transition-all duration-500 " style={{ border:'4px solid' ,borderColor:serviceAssets[serviceAssetsIndex].color}} >
+        <div  id={data.head} data-aos={animation} className="gass border-4 group gru border-lRed bg-white  relative box-content lg:p-4 p-2 mb-8 transition-all duration-500 " >
             <div className="flex gap-x-3  ">
                 <div className="lg:w-[20rem] flex items-center align-middle overflow-hidden">
-                    <img src={pics[index]} alt="" className='hover:scale-[1.15] transition-all duration-500' />
+                    <img src={pics[index]} alt="" className='group-hover:scale-[1.15]  transition-all duration-500' />
                 </div>
                 <div className='w-full  flex flex-col gap-10'>
-                    <h1 className="lg:text-3xl text-xl  transition-all duration-[500ms] mb-4  " style={{color:serviceAssets[serviceAssetsIndex].bgColor,textDecorationLine:'underline',textDecorationColor:serviceAssets[serviceAssetsIndex].color, textUnderlineOffset:'5px'}}>{data.head}</h1>
+                    <h1 className="lg:text-3xl text-xl w-max mx-auto transition-all duration-[500ms] relative mb-4 z-20 overflow-hidden hn   " data-head={data.head} >{data.head}</h1>
                     <p className="text-black text-left">{data.subHead}</p>
 
                         <div className='flex  w-full justify-between' >
-                            <button className='xl:px-6 hover:scale-105 but lg:px-4 py-2 glass w-max mx-auto transition-all duration-[500ms]' style={{backgroundColor:serviceAssets[serviceAssetsIndex].bgColor, borderColor:serviceAssets[serviceAssetsIndex].color}} >View More</button>
+                            <button className='xl:px-6 hover:scale-x-110  lg:px-4 py-2 bg-dRed border-2 border-dBlack rounded-xl w-max mx-auto transition-all duration-[500ms]' >View More</button>
 
                             <button onClick={(e)=>{
                                 setShowForm(true)
                                 setService(e.target.name)
-                                }} className='xl:px-6 hover:scale-105 but lg:px-4 py-2 glass w-max mx-auto transition-all duration-[500ms]' style={{backgroundColor:serviceAssets[serviceAssetsIndex].bgColor, borderColor:serviceAssets[serviceAssetsIndex].color}} name={data.head} >Book Now</button>
+                                }} className='xl:px-6 hover:scale-x-110 lg:px-4 py-2 bg-dRed border-2 border-dBlack rounded-xl w-max mx-auto transition-all duration-[500ms]' name={data.head} >Book Now</button>
                         </div>
                 </div>
             </div>
@@ -106,11 +106,11 @@ const HomeSectionOne = ({serviceAssets,serviceAssetsIndex}) => {
             subHead:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, maiores.'
         },
     ]
-
+//style={{color:serviceAssets[serviceAssetsIndex].bgColor}}
   return (
-    <section className='px-6 mt-24 text-center'>
-        <h1 className="lg:text-6xl text-4xl text-sha transition-all duration-[500ms]" style={{color:serviceAssets[serviceAssetsIndex].bgColor}}>Book Our Services</h1>
-        <div className="grid lg:grid-cols-2 grid-cols-1 mt-10 gap-16 ">
+    <section className='px-6 pt-24 bg-mBlack  text-center -z-10'>
+        <h1 className="lg:text-6xl text-white bg-mBlack  text-4xl tex-sha transition-all duration-[500ms] hov overflow-hidden" data-head='Book Our Services' >Book Our Services</h1>
+        <div className="grid lg:grid-cols-2 grid-cols-1  mt-10 gap-16 -z-10">
             {serviceDes.map((data,i)=>(<SectionCard key={i} data={data} animation={(i+1)%2==0?'fade-left':'fade-right'}  setService={setService} setShowForm={setShowForm} service={service} serviceAssets={serviceAssets} serviceAssetsIndex={serviceAssetsIndex} index={i} />))}
         </div>
         <Form data={serviceAssets[serviceAssetsIndex]} serviceData={serviceDes} setService={setService} service={service} showForm={showForm} setShowForm={setShowForm} />
