@@ -76,7 +76,7 @@ const HomeHero = ({serviceAssets,serviceAssetsIndex}) => {
                 
 
             </div>
-            <div className='w-4/12 bg-blu-600 -z-0  absolute top-1/2 -translate-y-1/2  fadeIn right-1/2 translate-x-1/2 h-screen self-end text-center  hidden md:flex justify-center flex-col items-center'>
+            <div className='w-4/12  -z-0  absolute top-1/2 -translate-y-1/2  fadeIn right-1/2 translate-x-1/2 h-screen self-end text-center  hidden md:flex justify-center flex-col items-center'>
                 {serviceAssets.map((data,i)=>(
                         
                         <img key={i} src={serviceList[data.bg]} alt="" className={`lg:h-[22rem]  h-[16rem]  mx-auto absolute top-3/4 -translate-y-1/2 right-0 translate-x-1/2 transition-all ease-in-out duration-[2000ms] ${serviceAssetsIndex==i?' opacity-100 scale-100':'opacity-0 scale-75 '} `} />
