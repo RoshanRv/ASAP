@@ -1,29 +1,37 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import ServicesInfo from './ServicesInfo'
+
 
 const DetailsPage = () => {
+
+    
+
   return (
-    <main className='p-6 lg:p-2 lg:pt-24 bg-mBlack '>
+    <main className='p-6 lg:p-2 lg:pt-24 bg-mBlack min-h-[100vh]'>
         <section className='flex lg:flex-row flex-col gap-x-8 w-full' >
-            <aside className='text-whte bg-white text-xl w-max mt-8' >
+            <aside className='text-whte bg-white h-max text-xl w-max mt-8 shadow-black shadow-xl ' >
                 <h1 className='bg-lRed px-6 p-2 text-white  border-b-2 border-black'>Our Services</h1>
-                <Link to={'electrician'}  ><h1 className='capitalize p-1 px-6 hover:bg-lBlack transition-all hover:text-white w-max ' >Electrician</h1></Link>
-                <Link to={'cleaning'}  ><h1 className='capitalize p-1 px-6 hover:bg-lBlack transition-all hover:text-white w-max ' >cleaning</h1></Link>
-                <Link to={'solarPlant'}  ><h1 className='capitalize p-1 px-6 hover:bg-lBlack transition-all hover:text-white w-max ' >solar Plant</h1></Link>
-                <Link to={'painter'}  ><h1 className='capitalize p-1 px-6 hover:bg-lBlack transition-all hover:text-white w-max ' >painter</h1></Link>
-                <Link to={'homeApplication'}  ><h1 className='capitalize p-1 px-6 hover:bg-lBlack transition-all hover:text-white w-max ' >home Application</h1></Link>
-                <Link to={'interiorDesign'}  ><h1 className='capitalize p-1 px-6 hover:bg-lBlack transition-all hover:text-white w-max ' >interior Design</h1></Link>
-                <Link to={'kitchenRemodel'}  ><h1 className='capitalize p-1 px-6 hover:bg-lBlack transition-all hover:text-white w-max ' >kitchen Remodel</h1></Link>
-                <Link to={'automobileService'}  ><h1 className='capitalize p-1 px-6 hover:bg-lBlack transition-all hover:text-white w-max ' >automobile Services</h1></Link>
-                <Link to={'computerServices'}  ><h1 className='capitalize p-1 px-6 hover:bg-lBlack transition-all hover:text-white w-max ' >computer Services</h1></Link>
-                <Link to={'carpentry'}  ><h1 className='capitalize p-1 px-6 hover:bg-lBlack transition-all hover:text-white w-max ' >carpentry</h1></Link>
-                <Link to={'itSolutions'}  ><h1 className='capitalize p-1 px-6 hover:bg-lBlack transition-all hover:text-white w-max ' >IT Solutions</h1></Link>
-                <Link to={'plumbing'}  ><h1 className='capitalize p-1 px-6 hover:bg-lBlack transition-all hover:text-white w-max ' >plumbing</h1></Link>
+                <div className="w-max">
+                    <Link to={'/services/electrician'}  ><h1 className='capitalize p-1 px-6 hover:bg-lBlack transition-all hover:text-white w-full ' >Electrician</h1></Link>
+                    <Link to={'/services/cleaning'}  ><h1 className='capitalize p-1 px-6 hover:bg-lBlack transition-all hover:text-white w-full ' >cleaning</h1></Link>
+                    <Link to={'/services/solarPlant'}  ><h1 className='capitalize p-1 px-6 hover:bg-lBlack transition-all hover:text-white w-full ' >solar Plant</h1></Link>
+                    <Link to={'/services/painter'}  ><h1 className='capitalize p-1 px-6 hover:bg-lBlack transition-all hover:text-white w-full ' >painter</h1></Link>
+                    <Link to={'/services/homeApplication'}  ><h1 className='capitalize p-1 px-6 hover:bg-lBlack transition-all hover:text-white w-full ' >home Application</h1></Link>
+                    <Link to={'/services/interiorDesign'}  ><h1 className='capitalize p-1 px-6 hover:bg-lBlack transition-all hover:text-white w-full ' >interior Design</h1></Link>
+                    <Link to={'/services/kitchenRemodel'}  ><h1 className='capitalize p-1 px-6 hover:bg-lBlack transition-all hover:text-white w-full ' >kitchen Remodel</h1></Link>
+                    <Link to={'/services/automobileService'}  ><h1 className='capitalize p-1 px-6 hover:bg-lBlack transition-all hover:text-white w-full ' >automobile Services</h1></Link>
+                    <Link to={'/services/computerServices'}  ><h1 className='capitalize p-1 px-6 hover:bg-lBlack transition-all hover:text-white w-full ' >computer Services</h1></Link>
+                    <Link to={'/services/carpentry'}  ><h1 className='capitalize p-1 px-6 hover:bg-lBlack transition-all hover:text-white w-full ' >carpentry</h1></Link>
+                    <Link to={'/services/itSolutions'}  ><h1 className='capitalize p-1 px-6 hover:bg-lBlack transition-all hover:text-white w-full ' >IT Solutions</h1></Link>
+                    <Link to={'/services/plumbing'}  ><h1 className='capitalize p-1 px-6 hover:bg-lBlack transition-all hover:text-white w-full ' >plumbing</h1></Link>
+
+                </div>
+                
             </aside>
 
-            <div className='bg-red-500 w-full mt-8 '>
-
-            </div>
+            
+            <ServicesInfo/>
 
         </section>
         

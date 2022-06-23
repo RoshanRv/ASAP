@@ -14,8 +14,8 @@ const Header = () => {
             <h1 className="text-3xl transition-all duration-500 text-lRed">ASAP</h1>
             {/*     tab , lap     */}
             <div className=" justify-between hidden z-20 md:flex w-1/2 items-center text-lRed">
-                <h1 className="lg:text-2xl text-xl  items-center cursor-pointer text-shaho  px-3 py-2 transition-all duration-500" >Home</h1>
-                <Link to={'services'} className="lg:text-2xl text-xl  items-center cursor-pointer text-shaho  px-3 py-2 transition-all duration-500"  >Services</Link>
+                <Link to={'/'} className="lg:text-2xl text-xl  items-center cursor-pointer text-shaho  px-3 py-2 transition-all duration-500" >Home</Link>
+                <Link to={'/services/electrician'} className="lg:text-2xl text-xl  items-center cursor-pointer text-shaho  px-3 py-2 transition-all duration-500"  >Services</Link>
                 <h1 className="lg:text-2xl text-xl  items-center cursor-pointer text-shaho px-3 py-2 transition-all duration-500"  >Gallery</h1>
                 <h1 className="lg:text-2xl text-xl  items-center cursor-pointer text-shaho px-3 py-2 transition-all duration-500"  >About Us</h1>
                 <button className='lg:text-xl text-lg glass p-2 rounded-xl px-3 transition-all duration-500 text-lRed'  ><FontAwesomeIcon icon={faRightToBracket} /></button>
@@ -33,19 +33,19 @@ const Header = () => {
                 <div className="text-white flex flex-col gap-y-10 transition-all duration-500"   >
                     <div className="flex items-center gap-x-4 text-3xl">
                         <FontAwesomeIcon icon={faHome} className='text-2xl' />
-                        <h1 className="">Home</h1>
+                        <Link to={'/'} className="">Home</Link>
                     </div>
                     <div className="flex items-center gap-x-4 text-3xl">
                         <FontAwesomeIcon icon={faBoltLightning} className='text-2xl' />
-                        <h1 className="">Services</h1>
+                        <Link to={'/services/electrician'} className="">Services</Link>
                     </div>
                     <div className="flex items-center gap-x-4 text-3xl">
                         <FontAwesomeIcon icon={faImages} className='text-2xl' />
-                        <h1 className="">Gallery</h1>
+                        <Link to={''} className="">Gallery</Link>
                     </div>
                     <div className="flex items-center gap-x-4 text-3xl">
                         <FontAwesomeIcon icon={faCircleInfo} className='text-2xl' />
-                        <h1 className="">About Us</h1>
+                        <Link to={''} className="">About Us</Link>
                     </div>
                     
                 </div>

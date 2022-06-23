@@ -13,14 +13,14 @@ import Header from './Components/Header';
 function App() {
   return (
     <>
-    <CustomCursor/>
+    {/* <CustomCursor/> */}
 
     <Router>
       <Header />
       <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/2' element={<Home2/>} />
-        <Route path='services' element={<DetailsPage/>} />
+        <Route path='services/:service' element={<DetailsPage/>} />
       </Routes> 
     </Router>
     </>
