@@ -1,7 +1,8 @@
-import React ,{useState,useEffect}from 'react'
+import React ,{useState,useEffect, useLayoutEffect}from 'react'
 import HomeHero from './HomeHero'
 import Header from '../Header'
 import HomeSectionOne from './HomeSectionOne'
+import Loading from '../Loading/Loading'
 
 //      Images
 import electrician from '../../assets/home/electrician.png'
@@ -18,6 +19,7 @@ import cleaner from '../../assets/home/cleaner.png'
 const Home = () => {
 
   const [serviceAssetsIndex,setServiceAssetsIndex]=useState(0)
+  const [isLoading,setIsLoading]=useState(true)
 
   const serviceAssets = [
     {
@@ -88,9 +90,26 @@ const Home = () => {
 
     },[])
 
+    //    Loading
+    // useLayoutEffect(()=>{
+    //   const load = setTimeout(()=>{
+
+    //     setIsLoading(false)
+
+    //   },100000)
+
+    //   return ()=>clearTimeout(load)
+
+    // },[])
+
 
   return (
-    <main className=' font-prompt overflow-hidden'  >
+    <>
+    {
+      isLoading?(
+        <Loading/>
+      ):(
+        <main className=' font-prompt overflow-hidden'  >
       <HomeHero serviceAssets={serviceAssets}  serviceAssetsIndex={serviceAssetsIndex} />
       <HomeSectionOne serviceAssets={serviceAssets}  serviceAssetsIndex={serviceAssetsIndex} />
       <section className=' '>
@@ -100,6 +119,11 @@ const Home = () => {
       
 
     </main>
+      )
+    }
+    
+
+    </>
   )
 }
 

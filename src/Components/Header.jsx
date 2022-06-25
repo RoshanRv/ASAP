@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useRef} from 'react'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRightToBracket ,faUser,faArrowDown,faBars,faClose,faImages,faBoltLightning,faCircleInfo,faHome} from '@fortawesome/free-solid-svg-icons'
@@ -8,8 +8,10 @@ const Header = () => {
 
     const [showSideNav,setShowSideNav]=useState(false)
 
+    const refHeader = useRef('')
+
   return (
-    <header className='absolute slideDown top-0 left-0 p-3 lg:px-12 text-black w-full transition-all duration-500'>
+    <header id='header' className='absolute font-prompt slideDown top-0 left-0 p-3 lg:px-12 text-black w-full transition-all duration-500' ref={refHeader} >
         <nav className="flex text-black/60 justify-between items-center w-full border-b-[2px] border-lRed  p-3 transition-all duration-500 " >
             <h1 className="text-3xl transition-all duration-500 text-lRed">ASAP</h1>
             {/*     tab , lap     */}

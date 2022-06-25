@@ -14,6 +14,7 @@ import kitchenBook from '../../assets/home/kitchenBook.svg'
 import paintBook from '../../assets/home/paintBook.png'
 import plumberBook from '../../assets/home/plumberBook.png'
 import solarBook from '../../assets/home/solarBook.png'
+import { Link } from 'react-router-dom';
 
 export const SectionCard = ({serviceAssets,serviceAssetsIndex,data,setService,setShowForm,animation,index})=>{
 
@@ -34,7 +35,7 @@ export const SectionCard = ({serviceAssets,serviceAssetsIndex,data,setService,se
                     <p className="text-black text-left">{data.subHead}</p>
 
                         <div className='flex  w-full justify-between' >
-                            <button className='xl:px-6 hover:scale-x-110  lg:px-4 py-2 bg-dRed border-2 border-dBlack rounded-xl w-max mx-auto transition-all duration-[500ms]' >View More</button>
+                            <Link to={`services/${data.link}`} ><button className='xl:px-6 hover:scale-x-110  lg:px-4 py-2 bg-dRed border-2 border-dBlack rounded-xl w-max mx-auto transition-all duration-[500ms]' >View More</button></Link>
 
                             <button onClick={(e)=>{
                                 setShowForm(true)
@@ -59,51 +60,63 @@ const HomeSectionOne = ({serviceAssets,serviceAssetsIndex}) => {
     const serviceDes = [
         {
             head:'Electrician',
-            subHead:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, maiores.'
+            subHead:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, maiores.',
+            link:'electrician'
         },
         {
             head:'Cleaning',
-            subHead:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, maiores.'
+            subHead:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, maiores.',
+            link:'cleaning'
         },
         {
             head:'Solar Plant',
-            subHead:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, maiores.'
+            subHead:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, maiores.',
+            link:'solarPlant'
         },
         {
             head:'Painter',
-            subHead:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, maiores.'
+            subHead:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, maiores.',
+            link:'painter'
         },
         {
             head:'Home Application',
-            subHead:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, maiores.'
+            subHead:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, maiores.',
+            link:'homeApplication'
         },
         {
             head:'Interior Design',
-            subHead:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, maiores.'
+            subHead:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, maiores.',
+            link:'interiorDesign'
         },
         {
             head:'Kitchen Remodel',
-            subHead:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, maiores.'
+            subHead:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, maiores.',
+            link:'kitchenRemodel'
         },
         {
             head:'Automobile Service',
-            subHead:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, maiores.'
+            subHead:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, maiores.',
+            link:'automobileService'
         },
         {
             head:'Computer Services',
-            subHead:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, maiores.'
+            subHead:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, maiores.',
+            link:'computerServices'
         },
         {
             head:'Carpentry',
-            subHead:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, maiores.'
+            subHead:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, maiores.',
+            link:'carpentry'
         },
         {
             head:'IT Solutions',
-            subHead:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, maiores.'
+            subHead:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, maiores.',
+            link:'itSolutions'
         },
         {
             head:'Plumbing',
-            subHead:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, maiores.'
+            subHead:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, maiores.',
+            link:'plumbing'
         },
     ]
 //style={{color:serviceAssets[serviceAssetsIndex].bgColor}}

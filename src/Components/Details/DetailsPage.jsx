@@ -8,7 +8,7 @@ const DetailsPage = () => {
     const {service} = useParams()
 
   return (
-    <main className='p-6 lg:p-2 lg:pt-24 bg-mBlack min-h-[100vh]'>
+    <main className='p-6 lg:p-2 lg:pt-24 bg-mBlack min-h-[100vh]  font-prompt'>
         <section className='flex lg:flex-row flex-col gap-x-8 w-full' >
             <aside className='text-whte bg-white h-max text-xl w-max mt-8 shadow-black shadow-xl ' >
                 <h1 className='bg-lRed px-6 p-2 text-white  border-b-2 border-black'>Our Services</h1>

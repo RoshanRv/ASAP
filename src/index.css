@@ -6,6 +6,12 @@ html, body ,button, * {
     /* cursor: none; */
 }
 
+::selection{
+    background-color: white;
+    mix-blend-mode: difference;
+    color: #E31C25;
+}
+
 .fix{
     background-attachment: fixed;
 }

@@ -110,7 +110,7 @@ const ServicesInfo = () => {
     <div className=' bg-lBlack boder-2  w-full mt-8 shadow-black shadow-xl'>
         <div className='p-4'>
 
-            <h1 className="text-white font-bold capitalize text-4xl   hov" data-head={serviceData[0]?.title}  >{serviceData[0]?.title}</h1>
+            <h1 className="text-white font-bold uppercase text-4xl   hov" data-head={serviceData[0]?.title}  >{serviceData[0]?.title}</h1>
 
             {serviceData.length&&(
             <div className='w-96  my-8 mx-auto rounded-full group overflow-hiddn bg-[#252525]' >
