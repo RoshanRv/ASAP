@@ -8,6 +8,18 @@ const Loading = () => {
 
     const [aniIndex,setAniIndex]=useState(0)
 
+    const temp =  ['electrician','automobile','cleaning','plumbing','painting','carpentry','IT']
+    const serviceList =  ['electrician','automobile','cleaning','plumbing','painting','carpentry','IT']
+    const [randomServiceList,setRandomServiceList] = useState(()=>{
+        let dummy = []
+        serviceList.forEach((data)=>{
+            const rand = Math.floor(Math.random()*temp.length)
+            dummy.push(temp[rand])
+            temp.splice(rand,1)
+        })
+        return dummy
+    })
+
 
     //      Remove and Add Header
     useEffect(()=>{
@@ -19,10 +31,14 @@ const Loading = () => {
 
         const interval = setInterval(()=>{
             setAniIndex(e=>{
-                if(e>=2)return 0
+                if(e>=serviceList.length-1)return 0
                 return e+1
             })
-        },1000)
+        },1500)
+
+        //  Creating rand service list
+      
+        
 
 
         return ()=>{
@@ -31,22 +47,28 @@ const Loading = () => {
         }
     },[])
 
+
+    useEffect(()=>{
+
+    },[])
+
   return (
     <main className='bg-mBlack font-prompt w-full h-screen overflow-hidden flex justify-center items-center'>
          {/*    Hero Spinner */}
          <div className="  scale-0 md:scale-[.75] lg:scale-[.80] xl:scale-[.95]  -z-0  ">
 
-        <div className="relative rounded-full text-4xl animate-zoom h-[40rem] w-[40rem] bg-gray-00  flex gap- flex-wrap transition-all duration-[500ms] text-lRed" >
+        <div className="relative rounded-full text-4xl animate-zoomInOut h-[40rem] w-[40rem] bg-gray-00  flex gap- flex-wrap transition-all duration-[500ms] text-lRed" >
             {/*         Services   */}
             <div className=" absolute  top-1/2 glass text-center -translate-y-1/2 text-white  w-max   px-4 py-2 rounded-lg left-1/2 -translate-x-1/2"  >
                 We Provide<br/>Quality<br/> 
-                <div className='h-10  overflow-hidden'>
-                    <div className=' transition-all' style={{transform:`translateY(calc(${aniIndex*(-2.5)}rem))`}} >
-                        <h1>one</h1>
-                        <h1>two</h1>
-                        <h1>three</h1>
+                <div className='h-[2.8rem] bg-white text-lRed rounded-full  my-2 px-2  overflow-hidden'>
+                    <div className=' transition-all duration-700' style={{transform:`translateY(calc(${aniIndex*(-2.8)}rem))`}} >
+                        {randomServiceList.map((data,i)=>(
+                            <h1 key={i} className='capitalize my-1' >{data}</h1>
+                        ))}
                     </div>
                 </div>
+                Services
             </div>
             {/*   */}
             {/* <div className="bg-lBlack mix-blend-difference w-32 h-32 rounded-full  absolute right-0 top-1/2 -translate-y-1/2"></div> */}
@@ -75,3 +97,81 @@ const Loading = () => {
 }
 
 export default Loading
+
+
+export const ServiceLoading = ({id})=>{
+
+    const [serviceInfo,setServiceInfo] = useState([
+        {
+            id:'electrician',
+            img:'electrician.png'
+            
+        },
+        {
+            id:'cleaning',
+            img:'cleaner.png'
+            
+            
+        },
+        {
+            id:'solarPlant',
+            img:'solar.png'
+            
+        },
+        {
+            id:'painter',
+            img:'painter.png'
+            
+        },
+        {
+            id:'homeApplication',
+            img:'HomeBook.png'
+            
+        },
+        {
+            id:'interiorDesign',
+            img:'interiorBook.png'
+            
+        },
+        {
+            id:'kitchenRemodel',
+            img:'kitchenBook.svg'
+            
+        },
+        {
+            id:'automobileService',
+            img:'auto.png'
+            
+        },
+        {
+            id:'computerServices',
+            img:'computer.png'
+            
+        },
+        {
+            id:'carpentry',
+            img:'carpenter.png'
+            
+        },
+        {
+            id:'itSolutions',
+            img:'ITBook.png'
+            
+        },
+        {
+            id:'plumbing',
+            img:'plumber.png'
+            
+        },
+    ])
+
+    const serviceImg = serviceInfo.filter((data)=>data.id==id)
+
+    return(
+        <main className='bg-mBlack font-prompt w-full h-screen overflow-hidden flex justify-center items-center'>
+            <div className="">
+                <img src={require(`../../assets/home/${serviceImg[0].img}`)} alt="" />
+            </div>
+        </main>
+    )
+}
