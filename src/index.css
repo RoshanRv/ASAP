@@ -215,18 +215,20 @@ background: linear-gradient(102deg, rgba(11,9,121,1) 42%, rgba(145,0,255,1) 100%
 .slideLeft{
     animation-name: slideLeft;
     animation-duration: 2500ms;
-    animation-timing-function: ease-in;
-}
+    animation-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    animation-fill-mode: backwards;}
 
 @keyframes slideLeft {
 
     0%{
         transform: translateX(-500px);
+        /* transform: scale(0.5); */
         opacity: 0;
     }
 
     100%{
-        right:50%;
+        transform: translateX(0px);
+        /* transform: scale(1); */
         opacity: 1;
     }
     
@@ -235,22 +237,68 @@ background: linear-gradient(102deg, rgba(11,9,121,1) 42%, rgba(145,0,255,1) 100%
 .animate-zoom{
 
     animation-name: zoom;
-    animation-duration: 2500ms;
+    animation-duration: 2000ms;
+    /* an */
 }
 
 @keyframes zoom {
 
     0%{
-        transform: scale(0.2);
+        transform: scale(0);
         opacity: 0;
     }
 
+    96%{
+        transform: scale(1.05);
+        opacity: 1;
+    }
     100%{
         transform: scale(1);
         opacity: 1;
     }
     
 }
+
+/*      Zoom In and Zoom Out */
+.animate-zoomInOut{
+
+    animation-name: zoomInOut;
+    animation-duration: 4100ms;
+    animation-fill-mode: forwards;
+    /* an */
+}
+
+@keyframes zoomInOut {
+
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    26%{
+        transform: scale(1.05);
+        opacity: 1;
+    }
+    30%{
+        transform: scale(1);
+        opacity: 1;
+    }
+    80%{
+        transform: scale(1);
+        opacity: 1;
+    }
+    84%{
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    
+}
+
+
 
 .text-sha{
     text-shadow: 2px 1px 10px black ;
@@ -273,7 +321,7 @@ background: linear-gradient(102deg, rgba(11,9,121,1) 42%, rgba(145,0,255,1) 100%
     box-shadow: 0 8px 32px 0 rgba(212, 84, 84, 0.37);
     backdrop-filter: blur( 10px );
     -webkit-backdrop-filter: blur( 14px );
-    border-radius: 14px;
+    border-radius: 10px;
     border: 2px solid rgba(255, 255, 255, 0.616);
     /* mix-blend-mode: difference; */
 

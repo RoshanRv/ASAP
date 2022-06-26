@@ -1,14 +1,32 @@
-import React, { useState } from 'react'
+import React, { useState ,useLayoutEffect} from 'react'
 import { Link,useParams } from 'react-router-dom'
 import ServicesInfo from './ServicesInfo'
-
+import { ServiceLoading } from '../Loading/Loading'
 
 const DetailsPage = () => {
 
     const {service} = useParams()
+    const [isLoading,setIsLoading]=useState(true)
+
+     //    Loading
+     useLayoutEffect(()=>{
+        const load = setTimeout(()=>{
+  
+          setIsLoading(false)
+  
+        },4000)
+  
+        return ()=>clearTimeout(load)
+  
+      },[])
+  
 
   return (
-    <main className='p-6 lg:p-2 lg:pt-24 bg-mBlack min-h-[100vh]  font-prompt'>
+    <>
+   {isLoading?(
+       <ServiceLoading id={service} />
+   ):( 
+   <main className='p-6 lg:p-2 lg:pt-24 bg-mBlack min-h-[100vh]  font-prompt'>
         <section className='flex lg:flex-row flex-col gap-x-8 w-full' >
             <aside className='text-whte bg-white h-max text-xl w-max mt-8 shadow-black shadow-xl ' >
                 <h1 className='bg-lRed px-6 p-2 text-white  border-b-2 border-black'>Our Services</h1>
@@ -36,7 +54,8 @@ const DetailsPage = () => {
         </section>
         
 
-    </main>
+    </main>)}
+    </>
   )
 }
 
