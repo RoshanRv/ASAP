@@ -91,16 +91,16 @@ const Home = () => {
     },[])
 
     //    Loading
-    // useLayoutEffect(()=>{
-    //   const load = setTimeout(()=>{
+    useLayoutEffect(()=>{
+      const load = setTimeout(()=>{
 
-    //     setIsLoading(false)
+        setIsLoading(false)
 
-    //   },100000)
+      },4000)
 
-    //   return ()=>clearTimeout(load)
+      return ()=>clearTimeout(load)
 
-    // },[])
+    },[])
 
 
   return (

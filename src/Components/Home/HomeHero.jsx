@@ -91,7 +91,7 @@ const HomeHero = ({serviceAssets,serviceAssetsIndex}) => {
         {/*    Hero Spinner */}
         <div className="absolute top-[55%]  scale-0 md:scale-[.75] lg:scale-[.80] xl:scale-[.95] -left-[20%] -translate-y-1/2 -z-0  ">
 
-            <div className="relative rounded-full text-4xl animate-zoom h-[40rem] w-[40rem] bg-gray-00  flex gap- flex-wrap transition-all duration-[500ms] text-lRed" >
+            <div className="relative rounded-full text-4xl slideLeft h-[40rem] w-[40rem] bg-gray-00  flex gap- flex-wrap transition-all duration-[500ms] text-lRed" >
                 {/*         Services   */}
                 {/* <h1 className=" absolute  top-1/2 glass text-center -translate-y-full  w-max   px-4 py-2 rounded-lg left-1/2 -translate-x-1/2"  >{services}</h1> */}
                 {/*   */}

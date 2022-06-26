@@ -34,7 +34,7 @@ export const SectionCard = ({serviceAssets,serviceAssetsIndex,data,setService,se
                     <h1 className="lg:text-3xl text-xl w-max mx-auto transition-all duration-[500ms] relative mb-4 z-20 overflow-hidden hn   " data-head={data.head} >{data.head}</h1>
                     <p className="text-black text-left">{data.subHead}</p>
 
-                        <div className='flex  w-full justify-between' >
+                        <div className='flex text-white w-full justify-between' >
                             <Link to={`services/${data.link}`} ><button className='xl:px-6 hover:scale-x-110  lg:px-4 py-2 bg-dRed border-2 border-dBlack rounded-xl w-max mx-auto transition-all duration-[500ms]' >View More</button></Link>
 
                             <button onClick={(e)=>{
@@ -124,7 +124,7 @@ const HomeSectionOne = ({serviceAssets,serviceAssetsIndex}) => {
     <section className='px-6 pt-24 bg-mBlack  text-center -z-10'>
         <h1 className="lg:text-6xl text-white bg-mBlack  text-4xl tex-sha transition-all duration-[500ms] hov overflow-hidden" data-head='Book Our Services' >Book Our Services</h1>
         <div className="grid lg:grid-cols-2 grid-cols-1  mt-10 gap-16 -z-10">
-            {serviceDes.map((data,i)=>(<SectionCard key={i} data={data} animation={(i+1)%2==0?'fade-left':'fade-right'}  setService={setService} setShowForm={setShowForm} service={service} serviceAssets={serviceAssets} serviceAssetsIndex={serviceAssetsIndex} index={i} />))}
+            {serviceDes.map((data,i)=>(<SectionCard key={i} data={data} animation={(i+1)%2==0?'fade-down-left':'fade-up-right'}  setService={setService} setShowForm={setShowForm} service={service} serviceAssets={serviceAssets} serviceAssetsIndex={serviceAssetsIndex} index={i} />))}
         </div>
         <Form data={serviceAssets[serviceAssetsIndex]} serviceData={serviceDes} setService={setService} service={service} showForm={showForm} setShowForm={setShowForm} />
     </section>

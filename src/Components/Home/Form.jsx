@@ -2,13 +2,52 @@ import React,{useState}from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClose } from '@fortawesome/free-solid-svg-icons'
 
-const Form = ({data,serviceData,showForm,setShowForm,setService,service}) => {
+const Form = ({showForm,setShowForm,setService,service}) => {
 
     const [name,setName]=useState('')
     const [phone,setPhone]=useState('')
     // const [service,setService]=useState('')
     const [details,setDetails]=useState('')
     const [address,setAddress]=useState('')
+
+    const serviceData = [
+        {
+            head:'Electrician',
+        },
+        {
+            head:'Cleaning',
+        },
+        {
+            head:'Solar Plant',
+        },
+        {
+            head:'Painter',
+        },
+        {
+            head:'Home Application',
+        },
+        {
+            head:'Interior Design',
+        },
+        {
+            head:'Kitchen Remodel',
+        },
+        {
+            head:'Automobile Service',
+        },
+        {
+            head:'Computer Services',
+        },
+        {
+            head:'Carpentry',
+        },
+        {
+            head:'IT Solutions',
+        },
+        {
+            head:'Plumbing',
+        },
+    ]
 
 
     const handleBook = (e)=>{
@@ -27,7 +66,7 @@ const Form = ({data,serviceData,showForm,setShowForm,setService,service}) => {
     <section className={`fixed bg-black/80 text-white z-50 ${showForm?'top-0':'-top-full opacity-0'} left-0  h-full w-full flex justify-center items-center `}>
         <div className="bg-mBlack border-4 border-red-700 rounded-lg relative lg:p-6 p-2 lg:w-1/2 w-11/12 transition-all xl:w-6/12" >
             {/*             Close Btn */}
-            <button onClick={()=>setShowForm(false)}  className='absolute  text-2xl transition-all duration-500  top-3 right-3'><FontAwesomeIcon icon={faClose} className='hover:scale-125 transition-all' /></button>
+            <button onClick={()=>setShowForm(false)}  className='absolute  text-2xl transition-all duration-500  top-3 right-3'><FontAwesomeIcon icon={faClose} className='hover:scale-125 hover:rotate-90 duration-500 transition-all' /></button>
             <h1 className="text-3xl transition-all duration-500 hov" data-head='Book A Service' >Book A Service</h1>
             <form action="" className='mt-10 flex flex-col md:grid grid-cols-1 md:grid-cols-2 ap-y-6 gap-4 p-6'>
                 <div className='flex  justify-aound hover:scale-x-105 transition-all items-baseline'>
@@ -39,13 +78,16 @@ const Form = ({data,serviceData,showForm,setShowForm,setService,service}) => {
                     <input type="tel" placeholder='Phone' value={phone} onChange={(e)=>setPhone(e.target.value)} className='outline-0 text-black transition-all duration-500 w-full text-lg text-center p-3'  required />
                 </div>
                 <div  className='flex  justify-around items-baseline hover:scale-x-105 transition-all col-span-2'>
-                    {/* <label  className='text-xl transition-all duration-500'>Service</label> */}
+
+                    {setService?(
                     <select value={service} onChange={(e)=>setService(e.target.value)} required className='outline-0  text-black transition-all duration-500 w-full text-lg text-center p-3'  >
                         <option value="">Services</option>
                         {serviceData.map((sData,i)=>(
                             <option key={i} value={sData.head}>{sData.head}</option>
                         ))}
-                    </select >
+                    </select >):(
+                        <input type="text" value={service} readOnly  className='outline-0 text-black transition-all duration-500 w-full text-lg text-center p-3'  required />
+                    )}
                     
                 </div>
                 <div  className='flex  justify-around hover:scale-x-105 transition-all items-baseline col-span-2'>
