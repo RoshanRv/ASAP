@@ -39,6 +39,24 @@ html, body ,button, * {
     overflow: hidden;
 }
 
+/*      Service Up-Down Slide */
+.upDown::before{
+    content: ".";
+    display: block;
+    width: 100%;
+    /* color: white; */
+    position: absolute;
+    inset: -1rem;
+    /* top: 0%; */
+    /* left: 0%; */
+    transition: .5s cubic-bezier(.76, .06, .85, .07);
+    /* padding: 5px; */
+    background-color: white;
+    white-space: nowrap;
+    z-index: 0;
+    overflow: hidden;
+}
+
 .bg-card::before{
     content: '';
     position: absolute;

@@ -21,40 +21,42 @@ import cleaner from '../../assets/home/cleaner.png'
 
 const HomeHero = ({serviceAssets,serviceAssetsIndex}) => {
 
-    const [services,setService]=useState('Services')
 
     const serviceList =  [electrician,auto,cleaner,plumber,solar,painter,interior,carpenter,computer]
     
+    const [aniIndex,setAniIndex]=useState(0)
 
-    // console.log(document.documentElement)
-
-    useEffect(()=>{
-
-        document.documentElement.style.setProperty('--scroll-bg',serviceAssets[serviceAssetsIndex].color)
-        document.documentElement.style.setProperty('--scroll-thumb',serviceAssets[serviceAssetsIndex].bgColor)
-
-    },[serviceAssetsIndex])
-
-    useEffect(()=>{
-
-        const btn = document.querySelectorAll('.serv')
-        btn.forEach(service=>{
-            service.addEventListener('mouseenter' , ()=>{
-
-                if(services!=service.name){
-                    setService(service.name)
-                }
-
-                
-            })
-
-            service.addEventListener('mouseleave',()=>{
-                setService('Services')
-            })
+    const temp =  ['electrician','automobile','cleaning','plumbing','painting','carpentry','IT']
+    const serviceListSlider =  ['electrician','automobile','cleaning','plumbing','painting','carpentry','IT']
+    const [randomServiceList,setRandomServiceList] = useState(()=>{
+        let dummy = []
+        serviceListSlider.forEach((data)=>{
+            const rand = Math.floor(Math.random()*temp.length)
+            dummy.push(temp[rand])
+            temp.splice(rand,1)
         })
+        return dummy
+    })
+
+    useEffect(()=>{
+
+        //      updating aniIndex
+
+        const interval = setInterval(()=>{
+            setAniIndex(e=>{
+                if(e>=randomServiceList.length-1)return 0
+                return e+1
+            })
+        },1500)
 
 
+        return ()=>{
+            clearInterval(interval)
+        }
     },[])
+
+
+    
 
   return (
     <section className='h-[100vh] fix text-center px-6 transition-all  items-cener flex flex-row-reverse  bg-mBlack  duration-[500ms] overflow-hidden'  >
@@ -70,7 +72,15 @@ const HomeHero = ({serviceAssets,serviceAssetsIndex}) => {
                         <h1 className="asap" ><em>ASAP</em></h1>
                         <FontAwesomeIcon  icon={faWind} className='lg:text-8xl text-6xl icon-sha' />
                     </div>               
-                    <p className='my-6 lg:text-2xl text-xl transition-all slideRight duration-[500ms] text-dRed text-sha' style={{animationDelay:'200ms'}} ><em>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, maiores.</em></p>
+                    <em><div className='my-6 lg:text-2xl flex items-center gap-x-2 text-xl transition-all slideRight duration-[500ms] text-dRed text-sha' style={{animationDelay:'200ms'}} >We Provide Best 
+                    <div className='h-[2.5rem] relative bg-white rounded-lg text-lRed my-2 px-2 w-max  overflow-hidden'>
+                    <div className=' transition-all duration-700 ' style={{transform:`translateY(calc(${aniIndex*(-2.23)}rem))`}} >
+                        {randomServiceList.map((data,i)=>(
+                            <h1 key={i} className='capitalize my-1 text-center lg:text-2xl' >{data}</h1>
+                        ))}
+                    </div>
+                </div>
+                     Services</div></em>
 
                 </div>
                 
@@ -92,10 +102,7 @@ const HomeHero = ({serviceAssets,serviceAssetsIndex}) => {
         <div className="absolute top-[55%]  scale-0 md:scale-[.75] lg:scale-[.80] xl:scale-[.95] -left-[20%] -translate-y-1/2 -z-0  ">
 
             <div className="relative rounded-full text-4xl slideLeft h-[40rem] w-[40rem] bg-gray-00  flex gap- flex-wrap transition-all duration-[500ms] text-lRed" >
-                {/*         Services   */}
-                {/* <h1 className=" absolute  top-1/2 glass text-center -translate-y-full  w-max   px-4 py-2 rounded-lg left-1/2 -translate-x-1/2"  >{services}</h1> */}
-                {/*   */}
-                {/* <div className="bg-lBlack mix-blend-difference w-32 h-32 rounded-full  absolute right-0 top-1/2 -translate-y-1/2"></div> */}
+               
                 <div className="w-full h-full rotate ">
                     <a href='#Electrician' className='  p-4 spin-hover serv icon  h-max absolute top-8 left-1/2 -translate-x-1/2  rounded-full glass px-6  ' name='Electrician'  ><FontAwesomeIcon icon={faPlug}  /></a>
                     <a href='#Cleaning' className='  p-4 spin-hover serv icon  rotate-[30deg] h-max absolute top-16 right-36  rounded-full glass px-3  ' name='Cleaning'  ><FontAwesomeIcon icon={faBroom}  /></a>

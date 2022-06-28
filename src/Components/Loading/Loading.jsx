@@ -36,8 +36,6 @@ const Loading = () => {
             })
         },1500)
 
-        //  Creating rand service list
-      
         
 
 
@@ -48,9 +46,6 @@ const Loading = () => {
     },[])
 
 
-    useEffect(()=>{
-
-    },[])
 
   return (
     <main className='bg-mBlack font-prompt w-full h-screen overflow-hidden flex justify-center items-center'>
@@ -100,6 +95,8 @@ export default Loading
 
 
 export const ServiceLoading = ({id})=>{
+
+    
 
     const [serviceInfo,setServiceInfo] = useState([
         {
@@ -165,13 +162,51 @@ export const ServiceLoading = ({id})=>{
         },
     ])
 
+    useEffect(()=>{
+        const header = document.getElementById('header')
+        header.classList.add('hidden')
+
+        return ()=>{
+            header.classList.remove('hidden')
+        }
+
+    })
+
     const serviceImg = serviceInfo.filter((data)=>data.id==id)
 
     return(
         <main className='bg-mBlack font-prompt w-full h-screen overflow-hidden flex justify-center items-center'>
-            <div className="">
+           
+
+                {/*    Hero Spinner */}
+            <div className="absolute top-1/2  scale-0 md:scale-[.75] lg:scale-[.80] xl:scale-[.85] left-1/2 -translate-x-1/2 -translate-y-1/2 z-10  ">
+
+                <div className="relative rounded-full text-4xl animate-zoomInOut h-[40rem] w-[40rem] bg-gray-00  flex gap- flex-wrap transition-all duration-[500ms] text-lRed" >
+                
+                    <div className="w-full h-full rotate ">
+                        <a href='#Electrician' className='  p-4 spin-hover serv icon  h-max absolute top-8 left-1/2 -translate-x-1/2  rounded-full glass px-6  ' name='Electrician'  ><FontAwesomeIcon icon={faPlug}  /></a>
+                        <a href='#Cleaning' className='  p-4 spin-hover serv icon  rotate-[30deg] h-max absolute top-16 right-36  rounded-full glass px-3  ' name='Cleaning'  ><FontAwesomeIcon icon={faBroom}  /></a>
+                        <a href='#Plumbing' className='  p-4 spin-hover serv icon  rotate-[60deg] h-max absolute top-40 right-16  rounded-full glass px-4  ' name='Plumbing'  ><FontAwesomeIcon icon={faToilet}  /></a>
+                        <a href='#Carpentry' className='  p-4 spin-hover serv icon  rotate-90 h-max absolute top-1/2 right-8 -translate-y-1/2 rounded-full glass px-3  ' name='Carpentry'  ><FontAwesomeIcon icon={faCouch}  /></a>
+                        <a href='#Automobile Service' className='  p-4 spin-hover serv icon  rotate-[120deg] h-max absolute bottom-40 right-16   rounded-full glass px-4  ' name='Automobile Services'  ><FontAwesomeIcon icon={faCar}  /></a>
+                        <a href='#Kitchen Remodel' className='  p-4 spin-hover serv icon  rotate-[150deg] h-max absolute bottom-16 right-36  rounded-full glass px-3  ' name='Kitchen Remodelling'  ><FontAwesomeIcon icon={faFireBurner}  /></a>
+                        <a href='#Solar Plant' className='  p-4 spin-hover serv icon  rotate-180  h-max absolute bottom-8 left-1/2 -translate-x-1/2   rounded-full glass px-3  ' name='Solar Plant'  ><FontAwesomeIcon icon={faSolarPanel}  /></a>
+                        <a href='#IT Solutions' className='  p-4 spin-hover serv icon  rotate-[210deg] h-max absolute bottom-16 left-36  rounded-full glass px-3  ' name='IT Solutions'  ><FontAwesomeIcon icon={faComputer}  /></a>
+                        <a href='#Painter' className='  p-4 spin-hover serv icon  rotate-[240deg] h-max absolute bottom-40 left-16  rounded-full glass px-6  ' name='Painting'  ><FontAwesomeIcon icon={faBrush}  /></a>
+                        <a href='#Computer Services' className='  p-4 spin-hover serv icon  rotate-[270deg] h-max absolute top-1/2 left-8 -translate-y-1/2   rounded-full glass px-4  ' name='Computer Servives'  ><FontAwesomeIcon icon={faScrewdriverWrench}  /></a>
+                        <a href='#Home Application' className='  p-4 spin-hover serv icon  rotate-[300deg] h-max absolute top-40 left-16  rounded-full glass px-3  ' name='Home Application'  ><FontAwesomeIcon icon={faHouseChimneyUser}  /></a>
+                        <a href='#Interior Design' className=' p-4 spin-hover serv icon  rotate-[330deg] h-max absolute top-16 left-36  rounded-full glass px-4  ' name='Interior '  ><FontAwesomeIcon icon={faPalette}  /></a>
+                        
+                    </div>
+                    
+                </div>
+
+            </div>
+
+            <div className="z-50 h-96 w-96 ">
                 <img src={require(`../../assets/home/${serviceImg[0].img}`)} alt="" />
             </div>
+
         </main>
     )
 }
