@@ -2,23 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body ,button, * {
-    /* cursor: none; */
+:root{
+  --lRed:#E31C25;
+  --dRed:#BB000E;
+  --lBlack:#1C1C1C;
+  --mBlack:#161616;
+  --dBlack:#111111;
+
 }
 
+/*    Selection BG  */
 ::selection{
     background-color: white;
     mix-blend-mode: difference;
-    color: #E31C25;
+    color: var(--lRed);
 }
 
-.fix{
-    background-attachment: fixed;
-}
-
-.bg-card{
-    z-index: -7;
-}
 
 .gru:hover .hn::before{
    width: 100%;
@@ -33,53 +32,20 @@ html, body ,button, * {
     left: 0%;
     transition: .5s cubic-bezier(.76, .06, .85, .07);
     /* padding: 5px; */
-    background-color: #E31C25;
+    background-color: var(--lRed);
     white-space: nowrap;
     z-index: 0;
     overflow: hidden;
 }
 
-/*      Service Up-Down Slide */
-.upDown::before{
-    content: ".";
-    display: block;
-    width: 100%;
-    /* color: white; */
-    position: absolute;
-    inset: -1rem;
-    /* top: 0%; */
-    /* left: 0%; */
-    transition: .5s cubic-bezier(.76, .06, .85, .07);
-    /* padding: 5px; */
-    background-color: white;
-    white-space: nowrap;
-    z-index: 0;
-    overflow: hidden;
-}
-
-.bg-card::before{
-    content: '';
-    position: absolute;
-    top:-4px;
-    left: -4px;
-    width: 100%;
-    padding: 2px;
-    background-color: royalblue;
-    height: 100%;
-    border: 4px solid #E31C25;
-    box-sizing: content-box;
-    /* transform: rotate(1deg); */
-    transform: skew(2deg ,2deg);
-    z-index: -1;
-}
 
 
 
-
+/*    Hov BG EFFECT */
 .hov::before{
     content: attr(data-head);
     width: 0%;
-    color: #E31C25;
+    color: var(--lRed);
     position: absolute;
     top: 0%;
     left: 0%;
@@ -109,43 +75,7 @@ html, body ,button, * {
 }
 
 
-body{
-    box-sizing: content-box;
-    scroll-behavior: smooth;
-    scroll-padding-top: 10%;
-    scroll-padding: 50px;
-}
 
-
-/*      Custom Cursor */
-
-h1:hover ~ .custom-cursor{
-    transform: scale(2);
-
-}
-.custom-cursor{
-    z-index: 1000;
-    transform: translate3d(0,0,0);
-    overflow: hidden;
-    pointer-events: none;
-    mix-blend-mode: difference;
-    transition: .1s;
-    transition-timing-function: linear;
-    width: 1rem;
-    height: 1rem;
-    background-color: #E31C25;
-    border-radius: 50%;
-    position: fixed;
-    display: none;
-}
-
-
-/*      Home Hero BG */
-.hero-bg{
-    /* background: rgb(11,9,121); */
-background: linear-gradient(102deg, rgba(11,9,121,1) 42%, rgba(145,0,255,1) 100%);
-/* background-size: 150%; */
-}
 
 @media (max-width:768px) {
     .hero{
@@ -161,6 +91,9 @@ background: linear-gradient(102deg, rgba(11,9,121,1) 42%, rgba(145,0,255,1) 100%
 }
 
 
+/*    Fadein ANi.... */
+
+
 .fadeIn{
     animation-name: fadeIn;
     animation-duration: 2000ms;
@@ -174,12 +107,10 @@ background: linear-gradient(102deg, rgba(11,9,121,1) 42%, rgba(145,0,255,1) 100%
 @keyframes fadeIn {
 
     0%{
-        /* transform: scale(0.5); */
         opacity: 0;
     }
 
     100%{
-        /* transform: scale(1); */
         opacity: 1;
     }
     
@@ -206,6 +137,9 @@ background: linear-gradient(102deg, rgba(11,9,121,1) 42%, rgba(145,0,255,1) 100%
     
 }
 
+/*      Slide Right and Left */
+
+
 .slideRight{
     animation-name: slideRight;
     animation-duration: 2500ms;
@@ -213,7 +147,6 @@ background: linear-gradient(102deg, rgba(11,9,121,1) 42%, rgba(145,0,255,1) 100%
     animation-fill-mode: backwards;
 
 }
-
 
 
 @keyframes slideRight {
@@ -240,23 +173,22 @@ background: linear-gradient(102deg, rgba(11,9,121,1) 42%, rgba(145,0,255,1) 100%
 
     0%{
         transform: translateX(-500px);
-        /* transform: scale(0.5); */
         opacity: 0;
     }
 
     100%{
         transform: translateX(0px);
-        /* transform: scale(1); */
         opacity: 1;
     }
     
 }
 
+/*    Zoom Effect */
+
 .animate-zoom{
 
     animation-name: zoom;
     animation-duration: 2000ms;
-    /* an */
 }
 
 @keyframes zoom {
@@ -277,13 +209,12 @@ background: linear-gradient(102deg, rgba(11,9,121,1) 42%, rgba(145,0,255,1) 100%
     
 }
 
-/*      Zoom In and Zoom Out */
+/*      Zoom In and Zoom Out Loading Effect */
 .animate-zoomInOut{
 
     animation-name: zoomInOut;
     animation-duration: 4100ms;
     animation-fill-mode: forwards;
-    /* an */
 }
 
 @keyframes zoomInOut {
@@ -316,7 +247,7 @@ background: linear-gradient(102deg, rgba(11,9,121,1) 42%, rgba(145,0,255,1) 100%
     
 }
 
-
+/*    HOVER AND SHADOWS */
 
 .text-sha{
     text-shadow: 2px 1px 10px black ;
@@ -330,9 +261,8 @@ background: linear-gradient(102deg, rgba(11,9,121,1) 42%, rgba(145,0,255,1) 100%
     filter:drop-shadow(2px 1px 4px black);
 }
 
-.serv{
-    /* filter:drop-shadow(1px 1px .1px); */
-}
+
+/*    GLASS EFFECT ICONS */
 
 .glass{
     background: rgba( 255, 255, 255, 0.2 );
@@ -347,12 +277,7 @@ background: linear-gradient(102deg, rgba(11,9,121,1) 42%, rgba(145,0,255,1) 100%
 
 
 
-.but:hover{
-    filter:drop-shadow(2px 1px 2px) ;
-}
-
-
-
+/*    ICON HOVER WHITE */
 
 .spin-hover:hover{
     background-color: white;
@@ -361,6 +286,9 @@ background: linear-gradient(102deg, rgba(11,9,121,1) 42%, rgba(145,0,255,1) 100%
     transition-duration: 500ms;
     box-shadow: 11px 15px 54px -1px rgba(239, 239, 239,0.5) , -11px -15px 54px -1px rgba(239, 239, 239,0.5);
 }
+
+
+/*    ICONS Spinning Effect */
 
 .rotate{
     animation-name: rotate;
@@ -392,7 +320,7 @@ background: linear-gradient(102deg, rgba(11,9,121,1) 42%, rgba(145,0,255,1) 100%
 }
 
 ::-webkit-scrollbar-thumb{
-    background-color: #E31C25;
+    background-color: var(--lRed);
     /* border-radius: 20px; */
     transition-property: all;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
